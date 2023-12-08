@@ -13,8 +13,8 @@ object ChatPageSteps {
         return this
     }
 
-    fun checkIfMessageSent(): ChatPageSteps {
-        ChatPage.assertMessageDisplayed("Hello my dear :)")
+    fun checkIfMessageSent(sentMessage: String): ChatPageSteps {
+        ChatPage.assertMessageDisplayed(sentMessage)
         return this
     }
 

@@ -9,6 +9,7 @@ import com.atiurin.sampleapp.data.SendMessageData
 import com.atiurin.sampleapp.helper.isTextOnScreen
 import com.atiurin.sampleapp.helper.isViewDisplayed
 import com.atiurin.sampleapp.helper.typeText
+import com.atiurin.sampleapp.pages.FriendsListPage
 import com.atiurin.sampleapp.pages.UIElementPage
 import com.atiurin.sampleapp.steps.ChatPageSteps
 import com.atiurin.sampleapp.steps.CustomClicksPageSteps
@@ -43,23 +44,25 @@ class ChattingTests {
     @Test
     fun chatWithEmmetBrown() {
         MainPageSteps
+            .scrollToFriend(FriendsNames.EMMET_BROWN)
             .openChat(FriendsNames.EMMET_BROWN)
 
         ChatPageSteps
             .checkChatPageIsDisplayed()
             .sendMessage(SendMessageData.EMMET_BROWN_MSG)
-            .checkIfMessageSent()
+            .checkIfMessageSent(SendMessageData.EMMET_BROWN_MSG)
     }
 
     @Test
     fun chatWithFriend17() {
         MainPageSteps
+            .scrollToFriend(FriendsNames.FRIEND17)
             .openChat(FriendsNames.FRIEND17)
 
         ChatPageSteps
             .checkChatPageIsDisplayed()
             .sendMessage(SendMessageData.FRIEND17_MSG)
-            .checkIfMessageSent()
+            .checkIfMessageSent(SendMessageData.FRIEND17_MSG)
     }
 
     @Test

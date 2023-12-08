@@ -5,6 +5,7 @@ import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import com.atiurin.sampleapp.R
+import com.atiurin.sampleapp.data.MainMenuItems
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
 
@@ -14,6 +15,6 @@ object MainManuPage {
     val textViewField: Matcher<View> by lazy { withId(R.id.text2) }
     val manuItem: Matcher<View> by lazy { Matchers.allOf(withId(R.id.design_menu_item_text)) }
     val customClicksItem: Matcher<View> by lazy  { withId(R.id.nav_view)}
-    val uiElementsItem: Matcher<View> by lazy { withText("UIElements")}
+    val uiElementsItem: Matcher<View> by lazy { withText(MainMenuItems.UI_ELEMENTS)}
 }
 
